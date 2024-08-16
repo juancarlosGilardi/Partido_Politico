@@ -1,0 +1,49 @@
+/* Cambiar el fondo a azul marino */
+.sidebar-navy {
+    background-color: #0682b3;
+}
+
+.sidebar-navy .nav-sidebar .nav-icon {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .sidebar-navy .nav-treeview .nav-icon {
+    font-size: 0.9rem;
+    margin-right: 0.3rem;
+  }
+
+/* Ajustar el espaciado de los elementos del menú */
+.nav-sidebar .nav-item .nav-link {
+    padding-left: 1rem;
+}
+
+/* Cambiar el color del texto en la barra lateral */
+.sidebar-navy .nav-sidebar .nav-item .nav-link {
+    color: #ffffff;
+}
+
+/* Ajustar el color de hover y selección activa */
+.sidebar-navy .nav-sidebar .nav-item .nav-link:hover,
+.sidebar-navy .nav-sidebar .nav-item .nav-link.active {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+/* Modificar el color del logo y texto del brand */
+.sidebar-navy .brand-link {
+    border-bottom-color: #003366;
+}
+
+.sidebar-navy .brand-link .brand-text {
+    color: #ffffff;
+}
+
+/* Ajustar el panel de usuario */
+.sidebar-navy .user-panel {
+    border-bottom-color: #003366;
+}
+
+.sidebar-navy .user-panel .info a {
+    color: #ffffff;
+}

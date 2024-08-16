@@ -1,0 +1,11 @@
+{% comment %} {% extends 'base/index.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Inscripción Exitosa</h1>
+    <p>¡Felicidades! Tu inscripción ha sido completada con éxito.</p>
+    <a href="{% url 'inscripcion' %}" class="btn btn-primary">Nueva Inscripción</a>
+    <a href="{% url 'lista_inscritos' %}" class="btn btn-secondary">Ver Lista de Inscritos</a>
+    <a href="{% url 'inscripcion' %}" class="btn btn-primary">Volver al Formulario</a>
+</div>
+{% endblock %} {% endcomment %}

@@ -1,0 +1,264 @@
+{% extends 'base/index.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Inscripción - Partido Político</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: black;
+        }
+        .btn-custom {
+            margin-right: 10px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        .card-header {
+            background-color: #21618c;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+        .btn-primary {
+            background-color: #21618c;
+            border-color: #21618c;
+        }
+        .btn-danger {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        .form-control:focus {
+            border-color: #003366;
+            box-shadow: 0 0 0 0.2rem rgba(0, 51, 102, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Ficha de Inscripción
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label for="{{ form.dni.id_for_label }}" class="col-sm-4 col-form-label">DNI:</label>
+                                <div class="col-sm-8">
+                                    {{ form.dni }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.nombres.id_for_label }}" class="col-sm-4 col-form-label">Nombres:</label>
+                                <div class="col-sm-8">
+                                    {{ form.nombres }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.apellido_paterno.id_for_label }}" class="col-sm-4 col-form-label">Apellido Paterno:</label>
+                                <div class="col-sm-8">
+                                    {{ form.apellido_paterno }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.apellido_materno.id_for_label }}" class="col-sm-4 col-form-label">Apellido Materno:</label>
+                                <div class="col-sm-8">
+                                    {{ form.apellido_materno }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.fecha_nacimiento.id_for_label }}" class="col-sm-4 col-form-label">Fecha de Nacimiento:</label>
+                                <div class="col-sm-8">
+                                    {{ form.fecha_nacimiento }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.referido_por.id_for_label }}" class="col-sm-4 col-form-label">Referido Por:</label>
+                                <div class="col-sm-8">
+                                    {{ form.referido_por }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.lugar_nacimiento.id_for_label }}" class="col-sm-4 col-form-label">Lugar de Nacimiento:</label>
+                                <div class="col-sm-8">
+                                    {{ form.lugar_nacimiento }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.sexo.id_for_label }}" class="col-sm-4 col-form-label">Sexo:</label>
+                                <div class="col-sm-8">
+                                    {{ form.sexo }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.estado_civil.id_for_label }}" class="col-sm-4 col-form-label">Estado Civil:</label>
+                                <div class="col-sm-8">
+                                    {{ form.estado_civil }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label for="{{ form.grado_instruccion.id_for_label }}" class="col-sm-4 col-form-label">Grado de Instrucción:</label>
+                                <div class="col-sm-8">
+                                    {{ form.grado_instruccion }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.profesion.id_for_label }}" class="col-sm-4 col-form-label">Profesión:</label>
+                                <div class="col-sm-8">
+                                    {{ form.profesion }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.direccion.id_for_label }}" class="col-sm-4 col-form-label">Dirección:</label>
+                                <div class="col-sm-8">
+                                    {{ form.direccion }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.distrito.id_for_label }}" class="col-sm-4 col-form-label">Distrito:</label>
+                                <div class="col-sm-8">
+                                    {{ form.distrito }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.provincia.id_for_label }}" class="col-sm-4 col-form-label">Provincia:</label>
+                                <div class="col-sm-8">
+                                    {{ form.provincia }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.departamento.id_for_label }}" class="col-sm-4 col-form-label">Departamento:</label>
+                                <div class="col-sm-8">
+                                    {{ form.departamento }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.telefono_fijo.id_for_label }}" class="col-sm-4 col-form-label">Teléfono Fijo:</label>
+                                <div class="col-sm-8">
+                                    {{ form.telefono_fijo }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.celular.id_for_label }}" class="col-sm-4 col-form-label">Celular:</label>
+                                <div class="col-sm-8">
+                                    {{ form.celular }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.email.id_for_label }}" class="col-sm-4 col-form-label">Email:</label>
+                                <div class="col-sm-8">
+                                    {{ form.email }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-divider"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label for="{{ form.centro_laboral.id_for_label }}" class="col-sm-4 col-form-label">Centro Laboral:</label>
+                                <div class="col-sm-8">
+                                    {{ form.centro_laboral }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.cargo_laboral.id_for_label }}" class="col-sm-4 col-form-label">Cargo Laboral:</label>
+                                <div class="col-sm-8">
+                                    {{ form.cargo_laboral }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.direccion_laboral.id_for_label }}" class="col-sm-4 col-form-label">Dirección Laboral:</label>
+                                <div class="col-sm-8">
+                                    {{ form.direccion_laboral }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label for="{{ form.distrito_laboral.id_for_label }}" class="col-sm-4 col-form-label">Distrito Laboral:</label>
+                                <div class="col-sm-8">
+                                    {{ form.distrito_laboral }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.provincia_laboral.id_for_label }}" class="col-sm-4 col-form-label">Provincia Laboral:</label>
+                                <div class="col-sm-8">
+                                    {{ form.provincia_laboral }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="{{ form.departamento_laboral.id_for_label }}" class="col-sm-4 col-form-label">Departamento Laboral:</label>
+                                <div class="col-sm-8">
+                                    {{ form.departamento_laboral }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown-divider"></div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-custom"><i class="fas fa-save"></i> Guardar</button>
+                            <button type="button" class="btn btn-danger btn-custom" onclick="return cerrar_modal()">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#dni').on('blur', function() {
+                var dni = $(this).val();
+                $.ajax({
+                    url: '{% url "get_person_data" %}',
+                    data: {
+                        'dni': dni
+                    },
+                    success: function(data) {
+                        if (data.exists) {
+                            alert('Esta persona ya está registrada.');
+                        }
+                    }
+                });
+            });
+        });
+
+        function cerrar_modal() {
+            $('#your-modal-id').modal('hide');
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

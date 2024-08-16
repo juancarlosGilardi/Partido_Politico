@@ -1,0 +1,32 @@
+{% extends 'base/index.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Lista de Inscritos</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Email</th>
+                <th>Fecha de Inscripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inscrito in inscritos %}
+            <tr>
+                <td>{{ inscrito.dni }}</td>
+                <td>{{ inscrito.nombres }}</td>
+                <td>{{ inscrito.apellido_paterno }}</td>
+                <td>{{ inscrito.apellido_materno }}</td>
+                <td>{{ inscrito.email }}</td>
+                <td>{{ inscrito.fecha_inscripcion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'inscripcion' %}" class="btn btn-primary">Nueva Inscripción</a>
+</div>
+{% endblock %}
