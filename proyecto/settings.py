@@ -62,8 +62,12 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'fichasi',  # Nombre de tu base de datos
+        'USER': 'root',      # Tu usuario de la base de datos
+        'PASSWORD': 'bddwvLhCNdfqsPHgySt94XP6e5ngUB8m',  # Tu contraseña
+        'HOST': 'dpg-cr1auaa3esus73asn740-a.oregon-postgres.render.com',  # Dirección del host
+        'PORT': '5432',      # Puerto de PostgreSQL, usualmente 5432
     }
 }
 
